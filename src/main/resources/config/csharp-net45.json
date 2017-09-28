@@ -1,0 +1,35 @@
+{
+  "lang": "csharp",
+  "packageTitle": "Classification SDK C# .net45",
+  "inputSpec": "swagger.json",
+  "outputDir": "csharp-net45",
+  "verbose": true,
+  "skipOverwrite": false,
+  "templateDir": "src/main/resources",
+  "auth": "hello:world",
+  "apiPackage": "Sphereon.SDK.Classification.Api",
+  "modelPackage": "Sphereon.SDK.Classification.Model",
+  "invokerPackage": "Sphereon.SDK.Classification.Invoker",
+  "groupId": "com.sphereon.sdk",
+  "artifactId": "classification-sdk-csharp-net45",
+  "artifactVersion": "1.0.0-SNAPSHO",
+  "systemProperties": {
+    "systemProp1": "value1"
+  },
+  "instantiationTypes": {
+    "hello": "world"
+  },
+  "typeMappings": {
+    "foo": "bar"
+  },
+  "additionalProperties": {
+    "addtProp1": "value2"
+  },
+  "importMappings": {
+    "type1": "import1"
+  },
+  "languageSpecificPrimitives": [
+    "rolex"
+  ],
+  "localVariablePrefix": "_"
+}

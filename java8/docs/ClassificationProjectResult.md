@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**projectInfo** | [**ClassificationProjectInfo**](ClassificationProjectInfo.md) | Project info | 
 **inline** | [**Inline**](Inline.md) | Storage of classification result in response |  [optional]
 **stream** | [**Stream**](Stream.md) | External storage of classification result |  [optional]
 **classificationType** | [**ClassificationTypeEnum**](#ClassificationTypeEnum) | Classification type |  [optional]
-**projectId** | **String** | Project id |  [optional]
 **resultType** | [**List&lt;ResultTypeEnum&gt;**](#List&lt;ResultTypeEnum&gt;) | Returned result in response and/or store |  [optional]
 
 

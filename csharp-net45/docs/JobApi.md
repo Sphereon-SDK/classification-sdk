@@ -1,17 +1,17 @@
 # Sphereon.SDK.Classification.Api.JobApi
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddProjectId**](JobApi.md#addprojectid) | **POST** /classification/0.1/jobs/{jobId}/projects/{projectId} | Add a projectId
-[**CreateClassificationJob**](JobApi.md#createclassificationjob) | **POST** /classification/0.1/jobs | Create classification job
-[**DeleteJob**](JobApi.md#deletejob) | **DELETE** /classification/0.1/jobs/{jobId} | Delete a job manually
-[**GetClassificationResult**](JobApi.md#getclassificationresult) | **GET** /classification/0.1/jobs/{jobId}/result | Classification result
-[**GetJob**](JobApi.md#getjob) | **GET** /classification/0.1/jobs/{jobId} | Job definition and state
-[**GetJobs**](JobApi.md#getjobs) | **GET** /classification/0.1/jobs | Get all jobs
-[**SubmitJob**](JobApi.md#submitjob) | **PUT** /classification/0.1/jobs/{jobId} | Submit classification job for processing
-[**UploadInputFile**](JobApi.md#uploadinputfile) | **POST** /classification/0.1/jobs/{jobId}/streams | Upload a file
+[**AddProjectId**](JobApi.md#addprojectid) | **POST** /jobs/{jobId}/projects/{projectId} | Add a projectId
+[**CreateClassificationJob**](JobApi.md#createclassificationjob) | **POST** /jobs | Create classification job
+[**DeleteJob**](JobApi.md#deletejob) | **DELETE** /jobs/{jobId} | Delete a job manually
+[**GetClassificationResult**](JobApi.md#getclassificationresult) | **GET** /jobs/{jobId}/result | Classification result
+[**GetJobWithClaimParameters**](JobApi.md#getjobwithclaimparameters) | **GET** /jobs/{jobId} | Job definition and state
+[**GetJobs**](JobApi.md#getjobs) | **GET** /jobs | Get all jobs
+[**SubmitJob**](JobApi.md#submitjob) | **PUT** /jobs/{jobId} | Submit classification job for processing
+[**UploadInputFile**](JobApi.md#uploadinputfile) | **POST** /jobs/{jobId}/streams | Upload a file
 
 
 <a name="addprojectid"></a>
@@ -36,7 +36,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var jobId = jobId_example;  // string | jobId
             var projectId = projectId_example;  // string | projectId
@@ -69,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -100,7 +102,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var classificationSettings = new ClassificationSettings(); // ClassificationSettings | classificationSettings
 
@@ -131,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -162,7 +166,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var jobId = jobId_example;  // string | jobId
 
@@ -193,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -224,7 +230,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var jobId = jobId_example;  // string | jobId
 
@@ -255,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -264,9 +272,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getjob"></a>
-# **GetJob**
-> ClassificationJobResponse GetJob (string jobId)
+<a name="getjobwithclaimparameters"></a>
+# **GetJobWithClaimParameters**
+> ClassificationJobResponse GetJobWithClaimParameters (string jobId)
 
 Job definition and state
 
@@ -282,23 +290,25 @@ using Sphereon.SDK.Classification.Model;
 
 namespace Example
 {
-    public class GetJobExample
+    public class GetJobWithClaimParametersExample
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var jobId = jobId_example;  // string | jobId
 
             try
             {
                 // Job definition and state
-                ClassificationJobResponse result = apiInstance.GetJob(jobId);
+                ClassificationJobResponse result = apiInstance.GetJobWithClaimParameters(jobId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling JobApi.GetJob: " + e.Message );
+                Debug.Print("Exception when calling JobApi.GetJobWithClaimParameters: " + e.Message );
             }
         }
     }
@@ -317,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -348,7 +358,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var status = new List<string>(); // List<string> | A list of status to filter on. (optional) 
 
@@ -371,7 +383,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**List<string>**](string.md)| A list of status to filter on. | [optional] 
+ **status** | [**List&lt;string&gt;**](string.md)| A list of status to filter on. | [optional] 
 
 ### Return type
 
@@ -379,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -410,7 +422,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var jobId = jobId_example;  // string | jobId
 
@@ -441,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -472,7 +486,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new JobApi();
             var jobId = jobId_example;  // string | jobId
             var stream = new System.IO.Stream(); // System.IO.Stream | The additional binary image (file/inputstream) to be classified
@@ -505,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 

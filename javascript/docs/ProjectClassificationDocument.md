@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstPage** | **Integer** | First page | 
-**lastPage** | **Integer** | Last page | 
+**firstPage** | **Number** | First page | 
+**lastPage** | **Number** | Last page | 
 **results** | [**[ProjectClassificationResult]**](ProjectClassificationResult.md) | A list of classification results | 
 
 

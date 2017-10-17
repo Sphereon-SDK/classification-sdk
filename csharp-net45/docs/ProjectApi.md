@@ -1,18 +1,17 @@
 # Sphereon.SDK.Classification.Api.ProjectApi
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateProject**](ProjectApi.md#createproject) | **POST** /classification/0.1/projects | Create project
-[**DeleteProject**](ProjectApi.md#deleteproject) | **DELETE** /classification/0.1/projects/{projectId} | Delete project
-[**DeleteProjectStream**](ProjectApi.md#deleteprojectstream) | **DELETE** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
-[**GetProject**](ProjectApi.md#getproject) | **GET** /classification/0.1/projects/{projectId} | Get project
-[**GetProjectStreamByLocation**](ProjectApi.md#getprojectstreambylocation) | **POST** /classification/0.1/projects/{projectId}/streams | Get project stream by location
-[**GetProjectStreamByLocationId**](ProjectApi.md#getprojectstreambylocationid) | **GET** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
-[**GetProjects**](ProjectApi.md#getprojects) | **GET** /classification/0.1/projects | Get all projects
-[**UpdateProjectStream**](ProjectApi.md#updateprojectstream) | **PUT** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
-[**UploadProjectStream**](ProjectApi.md#uploadprojectstream) | **POST** /classification/0.1/projects/{projectId}/streams/ | Upload project stream
+[**CreateProject**](ProjectApi.md#createproject) | **POST** /projects | Create project
+[**DeleteProject**](ProjectApi.md#deleteproject) | **DELETE** /projects/{projectId} | Delete project
+[**DeleteProjectStream**](ProjectApi.md#deleteprojectstream) | **DELETE** /projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
+[**GetProject**](ProjectApi.md#getproject) | **GET** /projects/{projectId} | Get project
+[**GetProjectStreamByLocationId**](ProjectApi.md#getprojectstreambylocationid) | **GET** /projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
+[**GetProjects**](ProjectApi.md#getprojects) | **GET** /projects | Get all projects
+[**UpdateProjectStream**](ProjectApi.md#updateprojectstream) | **PUT** /projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
+[**UploadProjectStream**](ProjectApi.md#uploadprojectstream) | **POST** /projects/{projectId}/streams | Upload project stream
 
 
 <a name="createproject"></a>
@@ -37,7 +36,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var projectsettings = new ProjectSettings(); // ProjectSettings | The project settings
 
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -99,7 +100,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var projectId = projectId_example;  // string | projectId
 
@@ -130,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -161,7 +164,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var projectId = projectId_example;  // string | projectId
             var projectStreamLocationId = projectStreamLocationId_example;  // string | projectStreamLocationId
@@ -194,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -225,7 +230,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var projectId = projectId_example;  // string | projectId
 
@@ -256,76 +263,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getprojectstreambylocation"></a>
-# **GetProjectStreamByLocation**
-> byte[] GetProjectStreamByLocation (string projectId, StreamLocation streamLocation)
-
-Get project stream by location
-
-Download the project data.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Sphereon.SDK.Classification.Api;
-using Sphereon.SDK.Classification.Client;
-using Sphereon.SDK.Classification.Model;
-
-namespace Example
-{
-    public class GetProjectStreamByLocationExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new ProjectApi();
-            var projectId = projectId_example;  // string | projectId
-            var streamLocation = new StreamLocation(); // StreamLocation | streamLocation
-
-            try
-            {
-                // Get project stream by location
-                byte[] result = apiInstance.GetProjectStreamByLocation(projectId, streamLocation);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProjectApi.GetProjectStreamByLocation: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **string**| projectId | 
- **streamLocation** | [**StreamLocation**](StreamLocation.md)| streamLocation | 
-
-### Return type
-
-**byte[]**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -351,7 +294,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var projectId = projectId_example;  // string | projectId
             var projectStreamLocationId = projectStreamLocationId_example;  // string | projectStreamLocationId
@@ -384,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -415,7 +360,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var status = new List<string>(); // List<string> | A list of status to filter on. (optional) 
 
@@ -438,7 +385,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**List<string>**](string.md)| A list of status to filter on. | [optional] 
+ **status** | [**List&lt;string&gt;**](string.md)| A list of status to filter on. | [optional] 
 
 ### Return type
 
@@ -446,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -477,7 +424,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var projectId = projectId_example;  // string | projectId
             var projectStreamLocationId = projectStreamLocationId_example;  // string | projectStreamLocationId
@@ -512,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -543,7 +492,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ProjectApi();
             var projectId = projectId_example;  // string | projectId
             var stream = new System.IO.Stream(); // System.IO.Stream | The project data
@@ -576,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 

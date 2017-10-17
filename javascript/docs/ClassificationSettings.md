@@ -5,12 +5,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lifecycle** | [**Lifecycle**](Lifecycle.md) | Lifecycle | [optional] 
 **classificationTypes** | **[String]** | List of classification types, currently only one allowed | 
-**maxResults** | **Integer** | Maximum number of classification results per document or page per classification project | 
+**maxResults** | **Number** | Maximum number of classification results per document or page per classification project | 
 **detailLevels** | **[String]** | Level of detail for the results | 
 **inputStorageLocation** | [**StorageLocation**](StorageLocation.md) | Storage container location | [optional] 
 **resultStorageLocation** | [**StorageLocation**](StorageLocation.md) | Classification result location | 
 **resultTypes** | **[String]** | Store classification result in | [optional] 
-**classificationType** | **[String]** |  | [optional] 
 **ocrMode** | **String** | OCR mode | [optional] 
 
 
@@ -47,19 +46,6 @@ Name | Type | Description | Notes
 * `INLINE` (value: `"INLINE"`)
 
 * `STORAGE` (value: `"STORAGE"`)
-
-
-
-
-<a name="[ClassificationTypeEnum]"></a>
-## Enum: [ClassificationTypeEnum]
-
-
-* `DOCUMENT` (value: `"DOCUMENT"`)
-
-* `PAGES` (value: `"PAGES"`)
-
-* `DOCUMENT_SEPARATION` (value: `"DOCUMENT_SEPARATION"`)
 
 
 

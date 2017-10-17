@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **inputStorageLocation** | [**StorageLocation**](StorageLocation.md) | Storage container location |  [optional]
 **resultStorageLocation** | [**StorageLocation**](StorageLocation.md) | Classification result location | 
 **resultTypes** | [**List&lt;ResultTypesEnum&gt;**](#List&lt;ResultTypesEnum&gt;) | Store classification result in |  [optional]
-**classificationType** | [**List&lt;ClassificationTypeEnum&gt;**](#List&lt;ClassificationTypeEnum&gt;) |  |  [optional]
 **ocrMode** | [**OcrModeEnum**](#OcrModeEnum) | OCR mode |  [optional]
 
 
@@ -39,15 +38,6 @@ Name | Value
 ---- | -----
 INLINE | &quot;INLINE&quot;
 STORAGE | &quot;STORAGE&quot;
-
-
-<a name="List<ClassificationTypeEnum>"></a>
-## Enum: List&lt;ClassificationTypeEnum&gt;
-Name | Value
----- | -----
-DOCUMENT | &quot;DOCUMENT&quot;
-PAGES | &quot;PAGES&quot;
-DOCUMENT_SEPARATION | &quot;DOCUMENT_SEPARATION&quot;
 
 
 <a name="OcrModeEnum"></a>

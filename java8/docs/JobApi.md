@@ -1,17 +1,17 @@
 # JobApi
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addProjectId**](JobApi.md#addProjectId) | **POST** /classification/0.1/jobs/{jobId}/projects/{projectId} | Add a projectId
-[**createClassificationJob**](JobApi.md#createClassificationJob) | **POST** /classification/0.1/jobs | Create classification job
-[**deleteJob**](JobApi.md#deleteJob) | **DELETE** /classification/0.1/jobs/{jobId} | Delete a job manually
-[**getClassificationResult**](JobApi.md#getClassificationResult) | **GET** /classification/0.1/jobs/{jobId}/result | Classification result
-[**getJob**](JobApi.md#getJob) | **GET** /classification/0.1/jobs/{jobId} | Job definition and state
-[**getJobs**](JobApi.md#getJobs) | **GET** /classification/0.1/jobs | Get all jobs
-[**submitJob**](JobApi.md#submitJob) | **PUT** /classification/0.1/jobs/{jobId} | Submit classification job for processing
-[**uploadInputFile**](JobApi.md#uploadInputFile) | **POST** /classification/0.1/jobs/{jobId}/streams | Upload a file
+[**addProjectId**](JobApi.md#addProjectId) | **POST** /jobs/{jobId}/projects/{projectId} | Add a projectId
+[**createClassificationJob**](JobApi.md#createClassificationJob) | **POST** /jobs | Create classification job
+[**deleteJob**](JobApi.md#deleteJob) | **DELETE** /jobs/{jobId} | Delete a job manually
+[**getClassificationResult**](JobApi.md#getClassificationResult) | **GET** /jobs/{jobId}/result | Classification result
+[**getJobWithClaimParameters**](JobApi.md#getJobWithClaimParameters) | **GET** /jobs/{jobId} | Job definition and state
+[**getJobs**](JobApi.md#getJobs) | **GET** /jobs | Get all jobs
+[**submitJob**](JobApi.md#submitJob) | **PUT** /jobs/{jobId} | Submit classification job for processing
+[**uploadInputFile**](JobApi.md#uploadInputFile) | **POST** /jobs/{jobId}/streams | Upload a file
 
 
 <a name="addProjectId"></a>
@@ -25,9 +25,17 @@ Add a project Id. Classification will not be started yet.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 String jobId = "jobId_example"; // String | jobId
@@ -54,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -72,9 +80,17 @@ Create a job using the given classification settings.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 ClassificationSettings classificationSettings = new ClassificationSettings(); // ClassificationSettings | classificationSettings
@@ -99,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -117,9 +133,17 @@ Delete the Classification job and all related files
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 String jobId = "jobId_example"; // String | jobId
@@ -144,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -162,9 +186,17 @@ Get the classification job definition and current state. Please not that you can
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 String jobId = "jobId_example"; // String | jobId
@@ -189,16 +221,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
-<a name="getJob"></a>
-# **getJob**
-> ClassificationJobResponse getJob(jobId)
+<a name="getJobWithClaimParameters"></a>
+# **getJobWithClaimParameters**
+> ClassificationJobResponse getJobWithClaimParameters(jobId)
 
 Job definition and state
 
@@ -207,17 +239,25 @@ Get the classification job definition and current state. Please not that you can
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 String jobId = "jobId_example"; // String | jobId
 try {
-    ClassificationJobResponse result = apiInstance.getJob(jobId);
+    ClassificationJobResponse result = apiInstance.getJobWithClaimParameters(jobId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling JobApi#getJob");
+    System.err.println("Exception when calling JobApi#getJobWithClaimParameters");
     e.printStackTrace();
 }
 ```
@@ -234,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -252,9 +292,17 @@ Get all classification job definitions and their current state.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 List<String> status = Arrays.asList("status_example"); // List<String> | A list of status to filter on.
@@ -279,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -297,9 +345,17 @@ Start classification of the previously uploaded file(s), using the supplied sett
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 String jobId = "jobId_example"; // String | jobId
@@ -324,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -342,9 +398,17 @@ Upload an input image. Classification will not be started yet.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.JobApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 JobApi apiInstance = new JobApi();
 String jobId = "jobId_example"; // String | jobId
@@ -371,7 +435,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 

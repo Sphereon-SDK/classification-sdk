@@ -60,7 +60,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 import com.sphereon.sdk.classification.handler.*;
 import com.sphereon.sdk.classification.handler.auth.*;
-import com.sphereon.sdk.classification.handler.model.*;
+import com.sphereon.sdk.classification.model.*;
 import com.sphereon.sdk.classification.api.AllApi;
 
 import java.io.File;
@@ -69,7 +69,12 @@ import java.util.*;
 public class AllApiExample {
 
     public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
         
+        // Configure OAuth2 access token for authorization: oauth2schema
+        OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+        oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
+
         AllApi apiInstance = new AllApi();
         String jobId = "jobId_example"; // String | jobId
         String projectId = "projectId_example"; // String | projectId
@@ -87,44 +92,42 @@ public class AllApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AllApi* | [**addProjectId**](docs/AllApi.md#addProjectId) | **POST** /classification/0.1/jobs/{jobId}/projects/{projectId} | Add a projectId
-*AllApi* | [**createClassificationJob**](docs/AllApi.md#createClassificationJob) | **POST** /classification/0.1/jobs | Create classification job
-*AllApi* | [**createProject**](docs/AllApi.md#createProject) | **POST** /classification/0.1/projects | Create project
-*AllApi* | [**deleteJob**](docs/AllApi.md#deleteJob) | **DELETE** /classification/0.1/jobs/{jobId} | Delete a job manually
-*AllApi* | [**deleteProject**](docs/AllApi.md#deleteProject) | **DELETE** /classification/0.1/projects/{projectId} | Delete project
-*AllApi* | [**deleteProjectStream**](docs/AllApi.md#deleteProjectStream) | **DELETE** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
-*AllApi* | [**getClassificationResult**](docs/AllApi.md#getClassificationResult) | **GET** /classification/0.1/jobs/{jobId}/result | Classification result
-*AllApi* | [**getJob**](docs/AllApi.md#getJob) | **GET** /classification/0.1/jobs/{jobId} | Job definition and state
-*AllApi* | [**getJobs**](docs/AllApi.md#getJobs) | **GET** /classification/0.1/jobs | Get all jobs
-*AllApi* | [**getProject**](docs/AllApi.md#getProject) | **GET** /classification/0.1/projects/{projectId} | Get project
-*AllApi* | [**getProjectStreamByLocation**](docs/AllApi.md#getProjectStreamByLocation) | **POST** /classification/0.1/projects/{projectId}/streams | Get project stream by location
-*AllApi* | [**getProjectStreamByLocationId**](docs/AllApi.md#getProjectStreamByLocationId) | **GET** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
-*AllApi* | [**getProjects**](docs/AllApi.md#getProjects) | **GET** /classification/0.1/projects | Get all projects
-*AllApi* | [**submitJob**](docs/AllApi.md#submitJob) | **PUT** /classification/0.1/jobs/{jobId} | Submit classification job for processing
-*AllApi* | [**updateProjectStream**](docs/AllApi.md#updateProjectStream) | **PUT** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
-*AllApi* | [**uploadInputFile**](docs/AllApi.md#uploadInputFile) | **POST** /classification/0.1/jobs/{jobId}/streams | Upload a file
-*AllApi* | [**uploadProjectStream**](docs/AllApi.md#uploadProjectStream) | **POST** /classification/0.1/projects/{projectId}/streams/ | Upload project stream
-*JobApi* | [**addProjectId**](docs/JobApi.md#addProjectId) | **POST** /classification/0.1/jobs/{jobId}/projects/{projectId} | Add a projectId
-*JobApi* | [**createClassificationJob**](docs/JobApi.md#createClassificationJob) | **POST** /classification/0.1/jobs | Create classification job
-*JobApi* | [**deleteJob**](docs/JobApi.md#deleteJob) | **DELETE** /classification/0.1/jobs/{jobId} | Delete a job manually
-*JobApi* | [**getClassificationResult**](docs/JobApi.md#getClassificationResult) | **GET** /classification/0.1/jobs/{jobId}/result | Classification result
-*JobApi* | [**getJob**](docs/JobApi.md#getJob) | **GET** /classification/0.1/jobs/{jobId} | Job definition and state
-*JobApi* | [**getJobs**](docs/JobApi.md#getJobs) | **GET** /classification/0.1/jobs | Get all jobs
-*JobApi* | [**submitJob**](docs/JobApi.md#submitJob) | **PUT** /classification/0.1/jobs/{jobId} | Submit classification job for processing
-*JobApi* | [**uploadInputFile**](docs/JobApi.md#uploadInputFile) | **POST** /classification/0.1/jobs/{jobId}/streams | Upload a file
-*ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /classification/0.1/projects | Create project
-*ProjectApi* | [**deleteProject**](docs/ProjectApi.md#deleteProject) | **DELETE** /classification/0.1/projects/{projectId} | Delete project
-*ProjectApi* | [**deleteProjectStream**](docs/ProjectApi.md#deleteProjectStream) | **DELETE** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
-*ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /classification/0.1/projects/{projectId} | Get project
-*ProjectApi* | [**getProjectStreamByLocation**](docs/ProjectApi.md#getProjectStreamByLocation) | **POST** /classification/0.1/projects/{projectId}/streams | Get project stream by location
-*ProjectApi* | [**getProjectStreamByLocationId**](docs/ProjectApi.md#getProjectStreamByLocationId) | **GET** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
-*ProjectApi* | [**getProjects**](docs/ProjectApi.md#getProjects) | **GET** /classification/0.1/projects | Get all projects
-*ProjectApi* | [**updateProjectStream**](docs/ProjectApi.md#updateProjectStream) | **PUT** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
-*ProjectApi* | [**uploadProjectStream**](docs/ProjectApi.md#uploadProjectStream) | **POST** /classification/0.1/projects/{projectId}/streams/ | Upload project stream
+*AllApi* | [**addProjectId**](docs/AllApi.md#addProjectId) | **POST** /jobs/{jobId}/projects/{projectId} | Add a projectId
+*AllApi* | [**createClassificationJob**](docs/AllApi.md#createClassificationJob) | **POST** /jobs | Create classification job
+*AllApi* | [**createProject**](docs/AllApi.md#createProject) | **POST** /projects | Create project
+*AllApi* | [**deleteJob**](docs/AllApi.md#deleteJob) | **DELETE** /jobs/{jobId} | Delete a job manually
+*AllApi* | [**deleteProject**](docs/AllApi.md#deleteProject) | **DELETE** /projects/{projectId} | Delete project
+*AllApi* | [**deleteProjectStream**](docs/AllApi.md#deleteProjectStream) | **DELETE** /projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
+*AllApi* | [**getClassificationResult**](docs/AllApi.md#getClassificationResult) | **GET** /jobs/{jobId}/result | Classification result
+*AllApi* | [**getJobWithClaimParameters**](docs/AllApi.md#getJobWithClaimParameters) | **GET** /jobs/{jobId} | Job definition and state
+*AllApi* | [**getJobs**](docs/AllApi.md#getJobs) | **GET** /jobs | Get all jobs
+*AllApi* | [**getProject**](docs/AllApi.md#getProject) | **GET** /projects/{projectId} | Get project
+*AllApi* | [**getProjectStreamByLocationId**](docs/AllApi.md#getProjectStreamByLocationId) | **GET** /projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
+*AllApi* | [**getProjects**](docs/AllApi.md#getProjects) | **GET** /projects | Get all projects
+*AllApi* | [**submitJob**](docs/AllApi.md#submitJob) | **PUT** /jobs/{jobId} | Submit classification job for processing
+*AllApi* | [**updateProjectStream**](docs/AllApi.md#updateProjectStream) | **PUT** /projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
+*AllApi* | [**uploadInputFile**](docs/AllApi.md#uploadInputFile) | **POST** /jobs/{jobId}/streams | Upload a file
+*AllApi* | [**uploadProjectStream**](docs/AllApi.md#uploadProjectStream) | **POST** /projects/{projectId}/streams | Upload project stream
+*JobApi* | [**addProjectId**](docs/JobApi.md#addProjectId) | **POST** /jobs/{jobId}/projects/{projectId} | Add a projectId
+*JobApi* | [**createClassificationJob**](docs/JobApi.md#createClassificationJob) | **POST** /jobs | Create classification job
+*JobApi* | [**deleteJob**](docs/JobApi.md#deleteJob) | **DELETE** /jobs/{jobId} | Delete a job manually
+*JobApi* | [**getClassificationResult**](docs/JobApi.md#getClassificationResult) | **GET** /jobs/{jobId}/result | Classification result
+*JobApi* | [**getJobWithClaimParameters**](docs/JobApi.md#getJobWithClaimParameters) | **GET** /jobs/{jobId} | Job definition and state
+*JobApi* | [**getJobs**](docs/JobApi.md#getJobs) | **GET** /jobs | Get all jobs
+*JobApi* | [**submitJob**](docs/JobApi.md#submitJob) | **PUT** /jobs/{jobId} | Submit classification job for processing
+*JobApi* | [**uploadInputFile**](docs/JobApi.md#uploadInputFile) | **POST** /jobs/{jobId}/streams | Upload a file
+*ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /projects | Create project
+*ProjectApi* | [**deleteProject**](docs/ProjectApi.md#deleteProject) | **DELETE** /projects/{projectId} | Delete project
+*ProjectApi* | [**deleteProjectStream**](docs/ProjectApi.md#deleteProjectStream) | **DELETE** /projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
+*ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /projects/{projectId} | Get project
+*ProjectApi* | [**getProjectStreamByLocationId**](docs/ProjectApi.md#getProjectStreamByLocationId) | **GET** /projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
+*ProjectApi* | [**getProjects**](docs/ProjectApi.md#getProjects) | **GET** /projects | Get all projects
+*ProjectApi* | [**updateProjectStream**](docs/ProjectApi.md#updateProjectStream) | **PUT** /projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
+*ProjectApi* | [**uploadProjectStream**](docs/ProjectApi.md#uploadProjectStream) | **POST** /projects/{projectId}/streams | Upload project stream
 
 
 ## Documentation for Models
@@ -132,6 +135,7 @@ Class | Method | HTTP request | Description
  - [ClassificationInputInfo](docs/ClassificationInputInfo.md)
  - [ClassificationJob](docs/ClassificationJob.md)
  - [ClassificationJobResponse](docs/ClassificationJobResponse.md)
+ - [ClassificationProjectInfo](docs/ClassificationProjectInfo.md)
  - [ClassificationProjectResult](docs/ClassificationProjectResult.md)
  - [ClassificationResponse](docs/ClassificationResponse.md)
  - [ClassificationResult](docs/ClassificationResult.md)
@@ -165,14 +169,14 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: application
-- **Authorizatoin URL**: 
+- **Authorization URL**: 
 - **Scopes**: 
   - global: accessEverything
 
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
+It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

@@ -1,17 +1,17 @@
 # classification.JobApi
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addProjectId**](JobApi.md#addProjectId) | **POST** /classification/0.1/jobs/{jobId}/projects/{projectId} | Add a projectId
-[**createClassificationJob**](JobApi.md#createClassificationJob) | **POST** /classification/0.1/jobs | Create classification job
-[**deleteJob**](JobApi.md#deleteJob) | **DELETE** /classification/0.1/jobs/{jobId} | Delete a job manually
-[**getClassificationResult**](JobApi.md#getClassificationResult) | **GET** /classification/0.1/jobs/{jobId}/result | Classification result
-[**getJob**](JobApi.md#getJob) | **GET** /classification/0.1/jobs/{jobId} | Job definition and state
-[**getJobs**](JobApi.md#getJobs) | **GET** /classification/0.1/jobs | Get all jobs
-[**submitJob**](JobApi.md#submitJob) | **PUT** /classification/0.1/jobs/{jobId} | Submit classification job for processing
-[**uploadInputFile**](JobApi.md#uploadInputFile) | **POST** /classification/0.1/jobs/{jobId}/streams | Upload a file
+[**addProjectId**](JobApi.md#addProjectId) | **POST** /jobs/{jobId}/projects/{projectId} | Add a projectId
+[**createClassificationJob**](JobApi.md#createClassificationJob) | **POST** /jobs | Create classification job
+[**deleteJob**](JobApi.md#deleteJob) | **DELETE** /jobs/{jobId} | Delete a job manually
+[**getClassificationResult**](JobApi.md#getClassificationResult) | **GET** /jobs/{jobId}/result | Classification result
+[**getJobWithClaimParameters**](JobApi.md#getJobWithClaimParameters) | **GET** /jobs/{jobId} | Job definition and state
+[**getJobs**](JobApi.md#getJobs) | **GET** /jobs | Get all jobs
+[**submitJob**](JobApi.md#submitJob) | **PUT** /jobs/{jobId} | Submit classification job for processing
+[**uploadInputFile**](JobApi.md#uploadInputFile) | **POST** /jobs/{jobId}/streams | Upload a file
 
 
 <a name="addProjectId"></a>
@@ -25,6 +25,11 @@ Add a project Id. Classification will not be started yet.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
@@ -53,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -71,6 +76,11 @@ Create a job using the given classification settings.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
@@ -96,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -114,6 +124,11 @@ Delete the Classification job and all related files
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
@@ -139,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -157,6 +172,11 @@ Get the classification job definition and current state. Please not that you can
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
@@ -182,16 +202,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
-<a name="getJob"></a>
-# **getJob**
-> ClassificationJobResponse getJob(jobId)
+<a name="getJobWithClaimParameters"></a>
+# **getJobWithClaimParameters**
+> ClassificationJobResponse getJobWithClaimParameters(jobId)
 
 Job definition and state
 
@@ -200,12 +220,17 @@ Get the classification job definition and current state. Please not that you can
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
 var jobId = "jobId_example"; // String | jobId
 
-apiInstance.getJob(jobId).then(function(data) {
+apiInstance.getJobWithClaimParameters(jobId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -225,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -243,6 +268,11 @@ Get all classification job definitions and their current state.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
@@ -269,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -287,6 +317,11 @@ Start classification of the previously uploaded file(s), using the supplied sett
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
@@ -312,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -330,6 +365,11 @@ Upload an input image. Classification will not be started yet.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.JobApi();
 
@@ -358,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 

@@ -1,18 +1,17 @@
 # ProjectApi
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createProject**](ProjectApi.md#createProject) | **POST** /classification/0.1/projects | Create project
-[**deleteProject**](ProjectApi.md#deleteProject) | **DELETE** /classification/0.1/projects/{projectId} | Delete project
-[**deleteProjectStream**](ProjectApi.md#deleteProjectStream) | **DELETE** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
-[**getProject**](ProjectApi.md#getProject) | **GET** /classification/0.1/projects/{projectId} | Get project
-[**getProjectStreamByLocation**](ProjectApi.md#getProjectStreamByLocation) | **POST** /classification/0.1/projects/{projectId}/streams | Get project stream by location
-[**getProjectStreamByLocationId**](ProjectApi.md#getProjectStreamByLocationId) | **GET** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
-[**getProjects**](ProjectApi.md#getProjects) | **GET** /classification/0.1/projects | Get all projects
-[**updateProjectStream**](ProjectApi.md#updateProjectStream) | **PUT** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
-[**uploadProjectStream**](ProjectApi.md#uploadProjectStream) | **POST** /classification/0.1/projects/{projectId}/streams/ | Upload project stream
+[**createProject**](ProjectApi.md#createProject) | **POST** /projects | Create project
+[**deleteProject**](ProjectApi.md#deleteProject) | **DELETE** /projects/{projectId} | Delete project
+[**deleteProjectStream**](ProjectApi.md#deleteProjectStream) | **DELETE** /projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
+[**getProject**](ProjectApi.md#getProject) | **GET** /projects/{projectId} | Get project
+[**getProjectStreamByLocationId**](ProjectApi.md#getProjectStreamByLocationId) | **GET** /projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
+[**getProjects**](ProjectApi.md#getProjects) | **GET** /projects | Get all projects
+[**updateProjectStream**](ProjectApi.md#updateProjectStream) | **PUT** /projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
+[**uploadProjectStream**](ProjectApi.md#uploadProjectStream) | **POST** /projects/{projectId}/streams | Upload project stream
 
 
 <a name="createProject"></a>
@@ -26,9 +25,17 @@ Create a new project using the given project settings.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 ProjectSettings projectsettings = new ProjectSettings(); // ProjectSettings | The project settings
@@ -53,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -71,9 +78,17 @@ Delete the project including all related data.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 String projectId = "projectId_example"; // String | projectId
@@ -98,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -116,9 +131,17 @@ Delete a stream in the project.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 String projectId = "projectId_example"; // String | projectId
@@ -145,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -163,9 +186,17 @@ Get the info of an existing project.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 String projectId = "projectId_example"; // String | projectId
@@ -190,59 +221,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
-
-<a name="getProjectStreamByLocation"></a>
-# **getProjectStreamByLocation**
-> byte[] getProjectStreamByLocation(projectId, streamLocation)
-
-Get project stream by location
-
-Download the project data.
-
-### Example
-```java
-// Import classes:
-//import com.sphereon.sdk.classification.handler.ApiException;
-//import com.sphereon.sdk.classification.api.ProjectApi;
-
-
-ProjectApi apiInstance = new ProjectApi();
-String projectId = "projectId_example"; // String | projectId
-StreamLocation streamLocation = new StreamLocation(); // StreamLocation | streamLocation
-try {
-    byte[] result = apiInstance.getProjectStreamByLocation(projectId, streamLocation);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProjectApi#getProjectStreamByLocation");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **String**| projectId |
- **streamLocation** | [**StreamLocation**](StreamLocation.md)| streamLocation |
-
-### Return type
-
-**byte[]**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/octet-stream
 
 <a name="getProjectStreamByLocationId"></a>
 # **getProjectStreamByLocationId**
@@ -255,9 +239,17 @@ Download the project data
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 String projectId = "projectId_example"; // String | projectId
@@ -284,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -302,9 +294,17 @@ Get all project definitions and their current state.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 List<String> status = Arrays.asList("status_example"); // List<String> | A list of status to filter on.
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -347,9 +347,17 @@ Update the project data used by the classification engine.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 String projectId = "projectId_example"; // String | projectId
@@ -378,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -396,9 +404,17 @@ Upload the project data used by the classification engine.
 ### Example
 ```java
 // Import classes:
+//import com.sphereon.sdk.classification.handler.ApiClient;
 //import com.sphereon.sdk.classification.handler.ApiException;
+//import com.sphereon.sdk.classification.handler.Configuration;
+//import com.sphereon.sdk.classification.handler.auth.*;
 //import com.sphereon.sdk.classification.api.ProjectApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2schema
+OAuth oauth2schema = (OAuth) defaultClient.getAuthentication("oauth2schema");
+oauth2schema.setAccessToken("YOUR ACCESS TOKEN");
 
 ProjectApi apiInstance = new ProjectApi();
 String projectId = "projectId_example"; // String | projectId
@@ -425,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 

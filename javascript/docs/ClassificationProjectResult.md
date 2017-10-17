@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**projectInfo** | [**ClassificationProjectInfo**](ClassificationProjectInfo.md) | Project info | 
 **inline** | [**Inline**](Inline.md) | Storage of classification result in response | [optional] 
 **stream** | [**Stream**](Stream.md) | External storage of classification result | [optional] 
 **classificationType** | **String** | Classification type | [optional] 
-**projectId** | **String** | Project id | [optional] 
 **resultType** | **[String]** | Returned result in response and/or store | [optional] 
 
 

@@ -1,26 +1,25 @@
 # classification.AllApi
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addProjectId**](AllApi.md#addProjectId) | **POST** /classification/0.1/jobs/{jobId}/projects/{projectId} | Add a projectId
-[**createClassificationJob**](AllApi.md#createClassificationJob) | **POST** /classification/0.1/jobs | Create classification job
-[**createProject**](AllApi.md#createProject) | **POST** /classification/0.1/projects | Create project
-[**deleteJob**](AllApi.md#deleteJob) | **DELETE** /classification/0.1/jobs/{jobId} | Delete a job manually
-[**deleteProject**](AllApi.md#deleteProject) | **DELETE** /classification/0.1/projects/{projectId} | Delete project
-[**deleteProjectStream**](AllApi.md#deleteProjectStream) | **DELETE** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
-[**getClassificationResult**](AllApi.md#getClassificationResult) | **GET** /classification/0.1/jobs/{jobId}/result | Classification result
-[**getJob**](AllApi.md#getJob) | **GET** /classification/0.1/jobs/{jobId} | Job definition and state
-[**getJobs**](AllApi.md#getJobs) | **GET** /classification/0.1/jobs | Get all jobs
-[**getProject**](AllApi.md#getProject) | **GET** /classification/0.1/projects/{projectId} | Get project
-[**getProjectStreamByLocation**](AllApi.md#getProjectStreamByLocation) | **POST** /classification/0.1/projects/{projectId}/streams | Get project stream by location
-[**getProjectStreamByLocationId**](AllApi.md#getProjectStreamByLocationId) | **GET** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
-[**getProjects**](AllApi.md#getProjects) | **GET** /classification/0.1/projects | Get all projects
-[**submitJob**](AllApi.md#submitJob) | **PUT** /classification/0.1/jobs/{jobId} | Submit classification job for processing
-[**updateProjectStream**](AllApi.md#updateProjectStream) | **PUT** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
-[**uploadInputFile**](AllApi.md#uploadInputFile) | **POST** /classification/0.1/jobs/{jobId}/streams | Upload a file
-[**uploadProjectStream**](AllApi.md#uploadProjectStream) | **POST** /classification/0.1/projects/{projectId}/streams/ | Upload project stream
+[**addProjectId**](AllApi.md#addProjectId) | **POST** /jobs/{jobId}/projects/{projectId} | Add a projectId
+[**createClassificationJob**](AllApi.md#createClassificationJob) | **POST** /jobs | Create classification job
+[**createProject**](AllApi.md#createProject) | **POST** /projects | Create project
+[**deleteJob**](AllApi.md#deleteJob) | **DELETE** /jobs/{jobId} | Delete a job manually
+[**deleteProject**](AllApi.md#deleteProject) | **DELETE** /projects/{projectId} | Delete project
+[**deleteProjectStream**](AllApi.md#deleteProjectStream) | **DELETE** /projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
+[**getClassificationResult**](AllApi.md#getClassificationResult) | **GET** /jobs/{jobId}/result | Classification result
+[**getJobWithClaimParameters**](AllApi.md#getJobWithClaimParameters) | **GET** /jobs/{jobId} | Job definition and state
+[**getJobs**](AllApi.md#getJobs) | **GET** /jobs | Get all jobs
+[**getProject**](AllApi.md#getProject) | **GET** /projects/{projectId} | Get project
+[**getProjectStreamByLocationId**](AllApi.md#getProjectStreamByLocationId) | **GET** /projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
+[**getProjects**](AllApi.md#getProjects) | **GET** /projects | Get all projects
+[**submitJob**](AllApi.md#submitJob) | **PUT** /jobs/{jobId} | Submit classification job for processing
+[**updateProjectStream**](AllApi.md#updateProjectStream) | **PUT** /projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
+[**uploadInputFile**](AllApi.md#uploadInputFile) | **POST** /jobs/{jobId}/streams | Upload a file
+[**uploadProjectStream**](AllApi.md#uploadProjectStream) | **POST** /projects/{projectId}/streams | Upload project stream
 
 
 <a name="addProjectId"></a>
@@ -34,6 +33,11 @@ Add a project Id. Classification will not be started yet.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -62,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -80,6 +84,11 @@ Create a job using the given classification settings.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -105,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -123,6 +132,11 @@ Create a new project using the given project settings.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -148,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -166,6 +180,11 @@ Delete the Classification job and all related files
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -191,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -209,6 +228,11 @@ Delete the project including all related data.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -234,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -252,6 +276,11 @@ Delete a stream in the project.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -280,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -298,6 +327,11 @@ Get the classification job definition and current state. Please not that you can
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -323,16 +357,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
-<a name="getJob"></a>
-# **getJob**
-> ClassificationJobResponse getJob(jobId)
+<a name="getJobWithClaimParameters"></a>
+# **getJobWithClaimParameters**
+> ClassificationJobResponse getJobWithClaimParameters(jobId)
 
 Job definition and state
 
@@ -341,12 +375,17 @@ Get the classification job definition and current state. Please not that you can
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
 var jobId = "jobId_example"; // String | jobId
 
-apiInstance.getJob(jobId).then(function(data) {
+apiInstance.getJobWithClaimParameters(jobId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -366,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -384,6 +423,11 @@ Get all classification job definitions and their current state.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -410,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -428,6 +472,11 @@ Get the info of an existing project.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -453,62 +502,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
-<a name="getProjectStreamByLocation"></a>
-# **getProjectStreamByLocation**
-> &#39;String&#39; getProjectStreamByLocation(projectId, streamLocation)
-
-Get project stream by location
-
-Download the project data.
-
-### Example
-```javascript
-var classification = require('classification-sdk');
-
-var apiInstance = new classification.AllApi();
-
-var projectId = "projectId_example"; // String | projectId
-
-var streamLocation = new classification.StreamLocation(); // StreamLocation | streamLocation
-
-apiInstance.getProjectStreamByLocation(projectId, streamLocation).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **String**| projectId | 
- **streamLocation** | [**StreamLocation**](StreamLocation.md)| streamLocation | 
-
-### Return type
-
-**&#39;String&#39;**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/octet-stream
-
 <a name="getProjectStreamByLocationId"></a>
 # **getProjectStreamByLocationId**
-> &#39;String&#39; getProjectStreamByLocationId(projectId, projectStreamLocationId)
+> &#39;Blob&#39; getProjectStreamByLocationId(projectId, projectStreamLocationId)
 
 Get project stream by locationid
 
@@ -517,6 +520,11 @@ Download the project data
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -541,11 +549,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+**&#39;Blob&#39;**
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -563,6 +571,11 @@ Get all project definitions and their current state.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -589,7 +602,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -607,6 +620,11 @@ Start classification of the previously uploaded file(s), using the supplied sett
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -632,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -650,6 +668,11 @@ Update the project data used by the classification engine.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -681,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -699,6 +722,11 @@ Upload an input image. Classification will not be started yet.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -727,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -745,6 +773,11 @@ Upload the project data used by the classification engine.
 ### Example
 ```javascript
 var classification = require('classification-sdk');
+var defaultClient = classification.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2schema
+var oauth2schema = defaultClient.authentications['oauth2schema'];
+oauth2schema.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new classification.AllApi();
 
@@ -773,7 +806,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 

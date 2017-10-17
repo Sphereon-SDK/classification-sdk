@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**inputInfo** | [**ClassificationInputInfo**](ClassificationInputInfo.md) | Original input information | 
 **jobInfo** | [**JobInfo**](JobInfo.md) | Job info | 
-**inputStreamLocations** | [**List&lt;StreamLocation&gt;**](StreamLocation.md) | The input files. Currently supported inputStreamLocations are: images, pdf- and text files | 
 
 
 

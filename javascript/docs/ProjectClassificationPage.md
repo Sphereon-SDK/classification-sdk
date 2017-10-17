@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **classifiedClassName** | **String** | classifiedClassName | [optional] 
 **featureHighlightings** | [**[ProjectClassificationClassifierFeature]**](ProjectClassificationClassifierFeature.md) | featureHighlightings | [optional] 
-**pageNumber** | **Integer** | Page number | [optional] 
+**pageNumber** | **Number** | Page number | [optional] 
 **textLines** | [**[ProjectClassificationTextLine]**](ProjectClassificationTextLine.md) | textLines | [optional] 
 **skipContentClassification** | **Boolean** | skipContentClassification | [optional] 
 **classificationResults** | [**[ProjectClassificationResult]**](ProjectClassificationResult.md) | A list of classification results | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **assignedClassName** | **String** | assignedClassName | [optional] 
 **separationResults** | [**[ProjectClassificationResult]**](ProjectClassificationResult.md) | separationResults | [optional] 
 **xresolution** | **Number** |  | [optional] 
-**originalPageNumber** | **Integer** | originalPageNumber | [optional] 
+**originalPageNumber** | **Number** | originalPageNumber | [optional] 
 **hasPageText** | **Boolean** | hasPageText | [optional] 
 **splitConfidence** | **Number** | splitConfidence | [optional] 
 **yresolution** | **Number** |  | [optional] 

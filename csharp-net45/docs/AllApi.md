@@ -1,26 +1,25 @@
 # Sphereon.SDK.Classification.Api.AllApi
 
-All URIs are relative to *https://gw.api.cloud.sphereon.com/*
+All URIs are relative to *https://gw.api.cloud.sphereon.com/classification/0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddProjectId**](AllApi.md#addprojectid) | **POST** /classification/0.1/jobs/{jobId}/projects/{projectId} | Add a projectId
-[**CreateClassificationJob**](AllApi.md#createclassificationjob) | **POST** /classification/0.1/jobs | Create classification job
-[**CreateProject**](AllApi.md#createproject) | **POST** /classification/0.1/projects | Create project
-[**DeleteJob**](AllApi.md#deletejob) | **DELETE** /classification/0.1/jobs/{jobId} | Delete a job manually
-[**DeleteProject**](AllApi.md#deleteproject) | **DELETE** /classification/0.1/projects/{projectId} | Delete project
-[**DeleteProjectStream**](AllApi.md#deleteprojectstream) | **DELETE** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
-[**GetClassificationResult**](AllApi.md#getclassificationresult) | **GET** /classification/0.1/jobs/{jobId}/result | Classification result
-[**GetJob**](AllApi.md#getjob) | **GET** /classification/0.1/jobs/{jobId} | Job definition and state
-[**GetJobs**](AllApi.md#getjobs) | **GET** /classification/0.1/jobs | Get all jobs
-[**GetProject**](AllApi.md#getproject) | **GET** /classification/0.1/projects/{projectId} | Get project
-[**GetProjectStreamByLocation**](AllApi.md#getprojectstreambylocation) | **POST** /classification/0.1/projects/{projectId}/streams | Get project stream by location
-[**GetProjectStreamByLocationId**](AllApi.md#getprojectstreambylocationid) | **GET** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
-[**GetProjects**](AllApi.md#getprojects) | **GET** /classification/0.1/projects | Get all projects
-[**SubmitJob**](AllApi.md#submitjob) | **PUT** /classification/0.1/jobs/{jobId} | Submit classification job for processing
-[**UpdateProjectStream**](AllApi.md#updateprojectstream) | **PUT** /classification/0.1/projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
-[**UploadInputFile**](AllApi.md#uploadinputfile) | **POST** /classification/0.1/jobs/{jobId}/streams | Upload a file
-[**UploadProjectStream**](AllApi.md#uploadprojectstream) | **POST** /classification/0.1/projects/{projectId}/streams/ | Upload project stream
+[**AddProjectId**](AllApi.md#addprojectid) | **POST** /jobs/{jobId}/projects/{projectId} | Add a projectId
+[**CreateClassificationJob**](AllApi.md#createclassificationjob) | **POST** /jobs | Create classification job
+[**CreateProject**](AllApi.md#createproject) | **POST** /projects | Create project
+[**DeleteJob**](AllApi.md#deletejob) | **DELETE** /jobs/{jobId} | Delete a job manually
+[**DeleteProject**](AllApi.md#deleteproject) | **DELETE** /projects/{projectId} | Delete project
+[**DeleteProjectStream**](AllApi.md#deleteprojectstream) | **DELETE** /projects/{projectId}/streams/{projectStreamLocationId} | Delete project stream
+[**GetClassificationResult**](AllApi.md#getclassificationresult) | **GET** /jobs/{jobId}/result | Classification result
+[**GetJobWithClaimParameters**](AllApi.md#getjobwithclaimparameters) | **GET** /jobs/{jobId} | Job definition and state
+[**GetJobs**](AllApi.md#getjobs) | **GET** /jobs | Get all jobs
+[**GetProject**](AllApi.md#getproject) | **GET** /projects/{projectId} | Get project
+[**GetProjectStreamByLocationId**](AllApi.md#getprojectstreambylocationid) | **GET** /projects/{projectId}/streams/{projectStreamLocationId} | Get project stream by locationid
+[**GetProjects**](AllApi.md#getprojects) | **GET** /projects | Get all projects
+[**SubmitJob**](AllApi.md#submitjob) | **PUT** /jobs/{jobId} | Submit classification job for processing
+[**UpdateProjectStream**](AllApi.md#updateprojectstream) | **PUT** /projects/{projectId}/streams/{projectStreamLocationId} | Updated project stream
+[**UploadInputFile**](AllApi.md#uploadinputfile) | **POST** /jobs/{jobId}/streams | Upload a file
+[**UploadProjectStream**](AllApi.md#uploadprojectstream) | **POST** /projects/{projectId}/streams | Upload project stream
 
 
 <a name="addprojectid"></a>
@@ -45,7 +44,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var jobId = jobId_example;  // string | jobId
             var projectId = projectId_example;  // string | projectId
@@ -78,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -109,7 +110,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var classificationSettings = new ClassificationSettings(); // ClassificationSettings | classificationSettings
 
@@ -140,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -171,7 +174,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var projectsettings = new ProjectSettings(); // ProjectSettings | The project settings
 
@@ -202,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -233,7 +238,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var jobId = jobId_example;  // string | jobId
 
@@ -264,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -295,7 +302,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var projectId = projectId_example;  // string | projectId
 
@@ -326,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -357,7 +366,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var projectId = projectId_example;  // string | projectId
             var projectStreamLocationId = projectStreamLocationId_example;  // string | projectStreamLocationId
@@ -390,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -421,7 +432,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var jobId = jobId_example;  // string | jobId
 
@@ -452,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -461,9 +474,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getjob"></a>
-# **GetJob**
-> ClassificationJobResponse GetJob (string jobId)
+<a name="getjobwithclaimparameters"></a>
+# **GetJobWithClaimParameters**
+> ClassificationJobResponse GetJobWithClaimParameters (string jobId)
 
 Job definition and state
 
@@ -479,23 +492,25 @@ using Sphereon.SDK.Classification.Model;
 
 namespace Example
 {
-    public class GetJobExample
+    public class GetJobWithClaimParametersExample
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var jobId = jobId_example;  // string | jobId
 
             try
             {
                 // Job definition and state
-                ClassificationJobResponse result = apiInstance.GetJob(jobId);
+                ClassificationJobResponse result = apiInstance.GetJobWithClaimParameters(jobId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AllApi.GetJob: " + e.Message );
+                Debug.Print("Exception when calling AllApi.GetJobWithClaimParameters: " + e.Message );
             }
         }
     }
@@ -514,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -545,7 +560,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var status = new List<string>(); // List<string> | A list of status to filter on. (optional) 
 
@@ -568,7 +585,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**List<string>**](string.md)| A list of status to filter on. | [optional] 
+ **status** | [**List&lt;string&gt;**](string.md)| A list of status to filter on. | [optional] 
 
 ### Return type
 
@@ -576,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -607,7 +624,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var projectId = projectId_example;  // string | projectId
 
@@ -638,76 +657,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getprojectstreambylocation"></a>
-# **GetProjectStreamByLocation**
-> byte[] GetProjectStreamByLocation (string projectId, StreamLocation streamLocation)
-
-Get project stream by location
-
-Download the project data.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Sphereon.SDK.Classification.Api;
-using Sphereon.SDK.Classification.Client;
-using Sphereon.SDK.Classification.Model;
-
-namespace Example
-{
-    public class GetProjectStreamByLocationExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new AllApi();
-            var projectId = projectId_example;  // string | projectId
-            var streamLocation = new StreamLocation(); // StreamLocation | streamLocation
-
-            try
-            {
-                // Get project stream by location
-                byte[] result = apiInstance.GetProjectStreamByLocation(projectId, streamLocation);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling AllApi.GetProjectStreamByLocation: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **string**| projectId | 
- **streamLocation** | [**StreamLocation**](StreamLocation.md)| streamLocation | 
-
-### Return type
-
-**byte[]**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -733,7 +688,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var projectId = projectId_example;  // string | projectId
             var projectStreamLocationId = projectStreamLocationId_example;  // string | projectStreamLocationId
@@ -766,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -797,7 +754,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var status = new List<string>(); // List<string> | A list of status to filter on. (optional) 
 
@@ -820,7 +779,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**List<string>**](string.md)| A list of status to filter on. | [optional] 
+ **status** | [**List&lt;string&gt;**](string.md)| A list of status to filter on. | [optional] 
 
 ### Return type
 
@@ -828,7 +787,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -859,7 +818,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var jobId = jobId_example;  // string | jobId
 
@@ -890,7 +851,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -921,7 +882,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var projectId = projectId_example;  // string | projectId
             var projectStreamLocationId = projectStreamLocationId_example;  // string | projectStreamLocationId
@@ -956,7 +919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -987,7 +950,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var jobId = jobId_example;  // string | jobId
             var stream = new System.IO.Stream(); // System.IO.Stream | The additional binary image (file/inputstream) to be classified
@@ -1020,7 +985,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
@@ -1051,7 +1016,9 @@ namespace Example
     {
         public void main()
         {
-            
+            // Configure OAuth2 access token for authorization: oauth2schema
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new AllApi();
             var projectId = projectId_example;  // string | projectId
             var stream = new System.IO.Stream(); // System.IO.Stream | The project data
@@ -1084,7 +1051,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2schema](../README.md#oauth2schema)
 
 ### HTTP request headers
 
